@@ -1,0 +1,36 @@
+<h1>JSON Logic Operations</h1>
+
+
+<h3>Selection of operation</h3>
+<div>
+  <label>Choose the operation: </label>
+
+  <select [(ngModel)]="selectedOperation" (change)="selectOperation($event)">
+    <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>
+  </select>
+
+  <p>
+    Chosen operation: {{selectedOperation}}
+  </p>
+</div>
+
+<section>
+  <div id="firstInput">
+
+    <h3>First value:</h3>
+    <input [(ngModel)]="firstInput">
+    <p>firstInput: {{firstInput}}</p>
+  </div>
+
+
+  <div id="secondInput">
+
+    <h3>Second value (optional):</h3>
+    <input [(ngModel)]="secondInput">
+    <p>Second Input: {{secondInput}}</p>
+  </div>
+
+  <button (click)="generateResult()">Generate result</button>
+  <p>Result: {{result}}</p>
+
+</section>
