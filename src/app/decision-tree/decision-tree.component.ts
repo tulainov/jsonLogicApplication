@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-decision-tree',
@@ -7,7 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class DecisionTreeComponent {
 
-  @Input() item: any;
 
 
 }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {OperationsList} from "./operations";
 import * as jsonLogic from 'json-logic-js';
+// import * as d3 from 'd3';
 
 @Component({
   selector: 'app-expressions',
@@ -11,11 +12,9 @@ export class ExpressionsComponent {
 
   operationList = new OperationsList();
   selectedOperation: string = '';
-  firstInput: any;
+  firstInput?: any;
   secondInput?: any;
-  thirdInput?: any;
   result: any;
-  someItem = 'Decision Tree!';
 
 
   public selectOperation(value: any) {
@@ -24,7 +23,14 @@ export class ExpressionsComponent {
 
   public generateResult() {
 
-    this.result = jsonLogic.apply({[this.selectedOperation]:
-        [this.firstInput, this.secondInput, this.thirdInput]});
+    if (this.firstInput !== undefined && this.firstInput !== null &&
+      this.secondInput !== undefined && this.secondInput !== null) {
+      this.result = jsonLogic.apply({
+        [this.selectedOperation]:
+          [this.firstInput, this.secondInput]
+      });
+    }
   }
+
+
 }
