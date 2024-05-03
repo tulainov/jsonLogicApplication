@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-decision-tree',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './decision-tree.component.css'
 })
 export class DecisionTreeComponent {
+
+  @Input() item: any;
+
 
 }

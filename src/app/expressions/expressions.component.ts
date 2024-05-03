@@ -13,7 +13,10 @@ export class ExpressionsComponent {
   selectedOperation: string = '';
   firstInput: any;
   secondInput?: any;
+  thirdInput?: any;
   result: any;
+  someItem = 'Decision Tree!';
+
 
   public selectOperation(value: any) {
     console.log("value", value);
@@ -21,6 +24,7 @@ export class ExpressionsComponent {
 
   public generateResult() {
 
-    this.result = jsonLogic.apply({[this.selectedOperation]: [this.firstInput, this.secondInput]});
+    this.result = jsonLogic.apply({[this.selectedOperation]:
+        [this.firstInput, this.secondInput, this.thirdInput]});
   }
 }
