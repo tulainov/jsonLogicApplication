@@ -1,7 +1,7 @@
 import {Operation} from './operations';
 
 
-class ArrayOperations {
+export class ArrayOperations {
   static operations: Operation[] = [
     {label: 'map', value: 'map'},
     {label: 'reduce', value: 'reduce'},
