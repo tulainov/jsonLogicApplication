@@ -1,4 +1,4 @@
-import {OperationInterface} from "../../expressions/OperationInterface";
+import {OperationInterface} from "../OperationInterface";
 
 
 // class represents numeric operations

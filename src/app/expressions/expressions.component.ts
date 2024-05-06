@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {OperationsList} from "./operations";
 import * as jsonLogic from 'json-logic-js';
-// import * as d3 from 'd3';
+
 
 @Component({
   selector: 'app-expressions',
