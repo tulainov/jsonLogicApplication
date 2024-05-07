@@ -15,6 +15,7 @@ export class ExpressionsComponent {
   firstInput?: any;
   secondInput?: any;
   result: any;
+  treeData: any[] = [];
 
 
   public selectOperation(value: any) {
@@ -29,8 +30,21 @@ export class ExpressionsComponent {
         [this.selectedOperation]:
           [this.firstInput, this.secondInput]
       });
+      this.addNodeToTree();
     }
   }
 
+  private addNodeToTree() {
+    this.treeData.push({
+      operation: this.selectedOperation,
+      firstInput: this.firstInput,
+      secondInput: this.secondInput,
+      result: this.result
+    });
+  }
+
+  public clearTree() {
+    this.treeData = [];
+  }
 
 }

@@ -34,3 +34,18 @@
   <p>Result: {{result}}</p>
 
 </section>
+
+<section id="tree">
+  <h2>Decision Tree</h2>
+  <ul>
+    <li *ngFor="let node of treeData">
+      First Input: {{node.firstInput}}, <br>
+      Operation: {{node.operation}}, <br>
+      Second Input: {{node.secondInput}}, <br>
+      Result: {{node.result}}
+    </li>
+  </ul>
+
+  <button (click)="clearTree()">Clear Tree</button>
+
+</section>
