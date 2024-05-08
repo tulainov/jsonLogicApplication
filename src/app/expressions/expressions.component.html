@@ -1,19 +1,6 @@
 <h1>JSON Logic Operations</h1>
 
 <h3>Selection of operation</h3>
-<!--<div>-->
-<!--  <label>Choose the operation for the node: </label>-->
-<!--  <select [(ngModel)]="selectedNodeOperation" (change)="selectOperation($event)">-->
-<!--    <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>-->
-<!--  </select>-->
-<!--  <p>Chosen operation for the node: {{selectedNodeOperation}}</p>-->
-
-<!--  <label>Choose the operation for the operands: </label>-->
-<!--  <select [(ngModel)]="selectedOperation" (change)="selectOperation($event)">-->
-<!--    <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>-->
-<!--  </select>-->
-<!--  <p>Chosen operation for the operands: {{selectedOperation}}</p>-->
-<!--</div>-->
 
 <div id="simpleOperation">
   <label>Choose simple operation: </label>
@@ -69,9 +56,7 @@
   <button (click)="completeNodeOperation()">Generate Node Operation</button>
   <ul>
     <li >
-<!--      First Result: {{firstResult}}, <br>-->
       Operation: {{selectedNodeOperation}}, <br>
-<!--      Second Result: {{secondResult}}, <br>-->
       Result: {{nodeResult}}
     </li>
   </ul>

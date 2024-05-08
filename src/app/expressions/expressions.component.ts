@@ -51,15 +51,6 @@ export class ExpressionsComponent {
       this.nodeResult = jsonLogic.apply({
         [this.selectedNodeOperation]: this.results
       })
-    // } else {
-    //   for (let i = 0; i < this.results.length; i++) {
-    //     this.firstResult = this.results[0];
-    //     this.secondResult = this.results[1];
-    //
-    //     this.nodeResult = jsonLogic.apply({
-    //       [this.selectedNodeOperation]: [this.firstResult, this.secondResult]
-    //     });
-    //   }
     }
   }
 
