@@ -1,30 +1,49 @@
 <h1>JSON Logic Operations</h1>
 
-
 <h3>Selection of operation</h3>
-<div>
-  <label>Choose the operation: </label>
+<!--<div>-->
+<!--  <label>Choose the operation for the node: </label>-->
+<!--  <select [(ngModel)]="selectedNodeOperation" (change)="selectOperation($event)">-->
+<!--    <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>-->
+<!--  </select>-->
+<!--  <p>Chosen operation for the node: {{selectedNodeOperation}}</p>-->
 
+<!--  <label>Choose the operation for the operands: </label>-->
+<!--  <select [(ngModel)]="selectedOperation" (change)="selectOperation($event)">-->
+<!--    <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>-->
+<!--  </select>-->
+<!--  <p>Chosen operation for the operands: {{selectedOperation}}</p>-->
+<!--</div>-->
+
+<div id="simpleOperation">
+  <label>Choose simple operation: </label>
   <select [(ngModel)]="selectedOperation" (change)="selectOperation($event)">
     <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>
   </select>
-
   <p>
-    Chosen operation: {{selectedOperation}}
+    Chosen simple Operation: {{selectedOperation}}
   </p>
 </div>
 
+<div id="nodesOperation">
+  <label>Choose the operation for nodes: </label>
+  <select [(ngModel)]="selectedNodeOperation" (change)="selectOperation($event)">
+    <option *ngFor="let operation of operationList.operations" [value]="operation.value">{{operation.label}}</option>
+  </select>
+  <p>
+    Chosen node operation: {{selectedNodeOperation}}
+  </p>
+</div>
+
+
 <section>
   <div id="firstInput">
-
     <h3>First value:</h3>
     <input [(ngModel)]="firstInput">
     <p>firstInput: {{firstInput}}</p>
   </div>
 
-
   <div id="secondInput">
-
     <h3>Second value (optional):</h3>
     <input [(ngModel)]="secondInput">
     <p>Second Input: {{secondInput}}</p>
@@ -32,11 +51,11 @@
 
   <button (click)="generateResult()">Generate result</button>
   <p>Result: {{result}}</p>
-
 </section>
 
 <section id="tree">
   <h2>Decision Tree</h2>
+  <h3>Simple Operations:</h3>
   <ul>
     <li *ngFor="let node of treeData">
       First Input: {{node.firstInput}}, <br>
@@ -46,6 +65,24 @@
     </li>
   </ul>
 
-  <button (click)="clearTree()">Clear Tree</button>
+  <h3>Node Operations:</h3>
+  <button (click)="completeNodeOperation()">Generate Node Operation</button>
+  <ul>
+    <li >
+<!--      First Result: {{firstResult}}, <br>-->
+      Operation: {{selectedNodeOperation}}, <br>
+<!--      Second Result: {{secondResult}}, <br>-->
+      Result: {{nodeResult}}
+    </li>
+  </ul>
 
+
+  <button (click)="clearTree()">Clear Tree</button>
+  <br>
+
+  <button (click)="refreshNodeResult()">Refresh Node Result</button>
 </section>
+
+<div style="margin: 7px; padding: 5px">
+  <button (click)="refresh()">Refresh page</button>
+</div>
